@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BreachCheck — Privacy Policy · Pixelvault Labs</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         margin: 0; padding: 0; background: #fafafa; color: #1a1a1a; line-height: 1.65; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 64px; }
+  .crumb { font-size: 14px; color: #666; margin-bottom: 16px; }
+  .crumb a { color: #666; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .meta { color: #666; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #777; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">Pixelvault Labs</a> · Privacy Policies</div>
+  <h1>BreachCheck — Privacy Policy</h1>
+  <div class="meta"><strong>Publisher:</strong> Pixelvault Labs<br><strong>Last updated:</strong> 27 September 2026</div>
+
+  <h2>The short version</h2>
+  <p>BreachCheck is designed so that <strong>we cannot see your passwords, even if we wanted to.</strong>
+  There are no accounts, no servers of ours, no analytics, and no tracking of any kind.</p>
+
+  <h2>How breach checking works (k-anonymity)</h2>
+  <p>When you check a password:</p>
+  <ol>
+    <li>Your password is hashed with SHA-1 <strong>on your device</strong>, inside the extension.</li>
+    <li>Only the <strong>first 5 characters of that hash</strong> are sent to the free HaveIBeenPwned
+      Pwned Passwords API (<code>https://api.pwnedpasswords.com/range/…</code>), with response padding
+      requested so the reply size reveals nothing.</li>
+    <li>The API returns a list of hash suffixes (about 800 candidates) that share those 5 characters.
+      Your device compares them locally and tells you whether your full hash is among them.</li>
+  </ol>
+  <p>The full password — and even the full hash — <strong>never leaves your device.</strong> This technique
+  is called <em>k-anonymity</em>, and it is the method HaveIBeenPwned itself recommends for password checking.
+  No cookies, no identifiers, and no user data accompany the request.</p>
+
+  <h2>What we collect</h2>
+  <p><strong>Nothing.</strong> BreachCheck collects, stores, and transmits zero personal data:</p>
+  <ul>
+    <li>Passwords you check are <strong>never stored</strong> — the input field is cleared after every check,
+      and the password only ever exists in the popup's memory.</li>
+    <li>The check <strong>history</strong> stored on your device records only the time of the check and whether
+      the result was "breached" or "not found" — never the password or anything derived from it. You can
+      clear it at any time.</li>
+    <li>The password <strong>generator</strong> runs entirely on-device using your browser's cryptographic
+      random number generator. Nothing is sent anywhere.</li>
+    <li>No analytics, no crash reporting, no advertising identifiers.</li>
+  </ul>
+
+  <h2>Network requests</h2>
+  <p>The only network request BreachCheck ever makes is the anonymous 5-character hash-prefix lookup to
+  <code>api.pwnedpasswords.com</code> when you press "Check for breaches". If the service rate-limits the
+  request, the extension retries once politely, then tells you to wait — your password is never stored
+  regardless of the outcome.</p>
+
+  <h2>Data retention</h2>
+  <p>Because we collect nothing, there is nothing to retain, share, or delete on our side. Everything the
+  extension stores lives in your browser's local storage and is removed if you uninstall the extension.</p>
+
+  <footer>
+    Privacy questions: <a href="mailto:pixelvaultlabs@outlook.com">pixelvaultlabs@outlook.com</a><br>
+    © Pixelvault Labs
+  </footer>
+</div>
+</body>
+</html>

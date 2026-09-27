@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuePick — Privacy Policy · Pixelvault Labs</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         margin: 0; padding: 0; background: #fafafa; color: #1a1a1a; line-height: 1.65; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 64px; }
+  .crumb { font-size: 14px; color: #666; margin-bottom: 16px; }
+  .crumb a { color: #666; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  .meta { color: #666; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-size: 14px; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #777; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">Pixelvault Labs</a> · Privacy Policies</div>
+  <h1>HuePick — Privacy Policy</h1>
+  <div class="meta"><strong>Publisher:</strong> Pixelvault Labs<br><strong>Last updated:</strong> 27 September 2026</div>
+
+  <p>HuePick is built on a simple principle: <strong>a color picker has no business talking to the internet.</strong></p>
+
+  <h2>Data collection: none</h2>
+  <ul>
+    <li>HuePick makes <strong>zero network requests</strong>. It never contacts any server — ours or anyone else's.</li>
+    <li>It collects <strong>no personal data</strong>, no browsing history, no URLs, no analytics, no telemetry, no crash reports.</li>
+    <li>It contains <strong>no third-party code, SDKs, or trackers</strong> of any kind.</li>
+  </ul>
+
+  <h2>What stays on your device</h2>
+  <ul>
+    <li>Your palette history (last 30 picked colors) is stored in your browser's local extension storage
+      (<code>chrome.storage.local</code>) on your own device.</li>
+    <li>On Chromium, picking uses the browser's built-in EyeDropper API — the pixel is read by the browser itself, not by our code.</li>
+    <li>On Firefox, picking captures a screenshot of the visible tab <strong>in memory only</strong>, lets you click
+      a pixel, then discards the image. The screenshot is never saved, transmitted, or stored.</li>
+    <li>You can delete your history at any time with the <strong>Clear</strong> button in the popup.</li>
+  </ul>
+
+  <h2>Permissions — why each one exists</h2>
+  <ul>
+    <li><strong>activeTab</strong> — lets the picker capture the current tab's pixels <em>only after you click "Pick a color"</em>. No background tab access, ever.</li>
+    <li><strong>scripting</strong> — injects the picker overlay into the current tab <em>only after you click "Pick a color"</em> (Firefox path).</li>
+    <li><strong>storage</strong> — saves your palette history locally on your device.</li>
+  </ul>
+  <p>HuePick requests <strong>no host permissions</strong> — it cannot read or modify any website except in the moment you explicitly ask it to pick a color.</p>
+
+  <footer>
+    Privacy questions: <a href="mailto:pixelvaultlabs@outlook.com">pixelvaultlabs@outlook.com</a><br>
+    © Pixelvault Labs
+  </footer>
+</div>
+</body>
+</html>
